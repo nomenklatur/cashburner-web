@@ -35,7 +35,7 @@ const ProductCard = ({ product, onProductClick, className, style }: ProductCardP
     >
       <Card 
         className={cn(
-          "group relative overflow-hidden border-0 shadow-soft hover:shadow-elegant transition-all duration-500 cursor-pointer",
+          "group relative overflow-hidden border-0 shadow-soft hover:shadow-lg transition-all duration-500 cursor-pointer py-0",
           className
         )}
         style={style}

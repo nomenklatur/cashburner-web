@@ -64,7 +64,7 @@ const SearchBar = ({ onProductSelect, className }: SearchBarProps) => {
       </div>
       
       {isOpen && results.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-background border border-border rounded-lg shadow-elegant z-50 max-h-96 overflow-y-auto">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-background border border-border rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto">
           <div className="p-2">
             <div className="text-sm text-muted-foreground mb-2 px-2">
               {results.length} result{results.length !== 1 ? 's' : ''} found
@@ -93,7 +93,7 @@ const SearchBar = ({ onProductSelect, className }: SearchBarProps) => {
       )}
       
       {isOpen && query && results.length === 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-background border border-border rounded-lg shadow-elegant z-50">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-background border border-border rounded-lg shadow-lg z-50">
           <div className="p-4 text-center text-muted-foreground">
             No products found for "{query}"
           </div>

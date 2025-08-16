@@ -36,7 +36,7 @@ const FeaturedCategories = () => {
                 ease: "easeOut"
               }}
             >
-              <Card  className="group relative overflow-hidden border-0 shadow-soft hover:shadow-elegant transition-all duration-500 py-0">
+              <Card  className="group relative overflow-hidden border-0 shadow-soft hover:shadow-lg transition-all duration-500 py-0">
                 <motion.div 
                   className="aspect-square relative overflow-hidden"
                   whileHover={{ scale: 1.02 }}
