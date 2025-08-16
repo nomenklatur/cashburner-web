@@ -26,42 +26,35 @@ export const categories: Category[] = [
     id: "clothing",
     title: "Clothing",
     description: "Timeless pieces for every occasion",
-    image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=800&q=80",
+    image: "/assets/images/categories/clothings.webp",
     link: "/category/clothing"
   },
   {
     id: "accessories",
     title: "Accessories",
     description: "Complete your look with luxury details",
-    image: "https://images.unsplash.com/photo-1487887235947-a955ef187fcc?auto=format&fit=crop&w=800&q=80",
+    image: "/assets/images/categories/accessories.webp",
     link: "/category/accessories"
   },
   {
     id: "beauty",
     title: "Beauty",
     description: "Enhance your natural radiance",
-    image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=800&q=80",
+    image: "/assets/images/categories/beauty.webp",
     link: "/category/beauty"
   },
   {
     id: "skincare",
     title: "Skincare",
     description: "Nourish your skin naturally",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    image: "/assets/images/categories/skincare.webp",
     link: "/category/skincare"
-  },
-  {
-    id: "bodywash",
-    title: "Body Care",
-    description: "Luxurious body care essentials",
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=800&q=80",
-    link: "/category/bodywash"
   },
   {
     id: "gadgets",
     title: "Gadgets",
     description: "Tech accessories for modern women",
-    image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=800&q=80",
+    image: "/assets/images/categories/gadgets.webp",
     link: "/category/gadgets"
   }
 ];
