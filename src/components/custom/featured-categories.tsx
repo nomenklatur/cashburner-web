@@ -2,9 +2,24 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { categories } from "@/lib/dummies/products";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Category } from "@/lib/types/shop.type";
+import Link from "next/link";
+import { API_BASE_URL, STORAGE_BASE_URL } from "@/lib/const/common";
 
 const FeaturedCategories = () => {
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const res = await axios.get(`${API_BASE_URL}/categories`);
+      setCategories(res.data);
+    }
+
+    fetchCategories();
+  }, [])
+
   return (
     <section className="py-24 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
@@ -24,9 +39,9 @@ const FeaturedCategories = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {categories.map((category, index) => (
+          {categories.map((category: Category, index: number) => (
             <motion.div
-              key={category.title}
+              key={category.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -43,8 +58,8 @@ const FeaturedCategories = () => {
                   transition={{ duration: 0.4 }}
                 >
                   <img
-                    src={category.image}
-                    alt={category.title}
+                    src={`${STORAGE_BASE_URL}/${category.image}`}
+                    alt={category.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
@@ -52,18 +67,14 @@ const FeaturedCategories = () => {
                   <div className="absolute inset-0 flex items-end p-6">
                     <div className="text-white">
                       <h3 className="text-2xl font-serif font-medium mb-2">
-                        {category.title}
+                        {category.name}
                       </h3>
                       <p className="text-white/90 mb-4 text-sm">
                         {category.description}
                       </p>
-                      <Button 
-                        variant={"outline"}
-                        size="sm"
-                        className="border-white text-gray-800"
-                      >
-                        Explore
-                      </Button>
+                      <Link href={`/category/${category.slug}`}>
+                        <Button variant={"outline"} size={"sm"} className="border-white text-gray-800">Explore</Button>
+                      </Link>                      
                     </div>
                   </div>
                 </motion.div>
